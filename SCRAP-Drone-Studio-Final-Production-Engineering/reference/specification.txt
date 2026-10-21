@@ -1,0 +1,15 @@
+SCRAP Drone Studio Ultimate
+
+Goal Transform the existing drone projects into one professional-grade
+drone management, autonomous swarm, and drone light show platform.
+
+Core Features - Multi-drone fleet management - PX4, ArduPilot, ROS2,
+MAVLink support - Swarm synchronization - Drone show creator with
+timeline, 3D preview and music sync - AI show generator - Mission
+planner - Mapping and inspection - Live telemetry dashboard -
+Simulation - Flight recorder - Plugin architecture - Secure user
+management - Modular architecture
+
+Objective Build a unified, professional drone operations platform
+combining fleet management, mission planning, simulation, mapping,
+analytics, and authorized drone light-show design into one application.

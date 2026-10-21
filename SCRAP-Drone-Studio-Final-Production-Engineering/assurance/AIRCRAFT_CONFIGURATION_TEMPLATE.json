@@ -1,0 +1,19 @@
+{
+  "name": "",
+  "manufacturer": "",
+  "aircraft_model": "",
+  "serial_number": "",
+  "controller_type": "custom",
+  "controller_manufacturer": "",
+  "controller_hardware": "",
+  "firmware_version": "",
+  "firmware_hash": "",
+  "environment": "controlled_test_range",
+  "jurisdiction": "",
+  "authority": "",
+  "operation_category": "",
+  "approval_reference": null,
+  "mass_kg": 1,
+  "max_wind_mps": 0,
+  "operator_name": ""
+}

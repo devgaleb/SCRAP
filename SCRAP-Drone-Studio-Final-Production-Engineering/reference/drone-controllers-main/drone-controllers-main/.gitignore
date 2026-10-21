@@ -1,0 +1,10 @@
+**/*__pycache__
+**/*.pyc
+**/*.egg-info
+.vscode/
+/build
+/dist
+# pixi environments
+.pixi
+*.egg-info
+site

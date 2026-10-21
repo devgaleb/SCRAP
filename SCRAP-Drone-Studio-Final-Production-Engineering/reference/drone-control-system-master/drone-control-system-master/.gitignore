@@ -1,0 +1,53 @@
+# Arduino IDE and build files
+*.ino.hex
+*.ino.with_bootloader.hex
+build/
+.cache/
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+.pio/build/
+.pio/libdeps/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+logs/
+
+# IDE specific
+*.iws
+.idea/
+*.iml
+
+# Project specific backups (keep organized backups)
+# code_ino.backup
+# code_no_gps.ino.backup
+# imu_with_receiver_backup

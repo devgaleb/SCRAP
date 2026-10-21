@@ -1,0 +1,90 @@
+#include <Arduino.h>
+#include <TinyMPU6050.h>
+#include <PPMReader.h>
+
+MPU6050 mpu (Wire);
+#define channumber 6 // Number of channels
+float channel_norm[channumber];
+int PIN_RECEIVER=3;
+long time_start;
+long time_now;
+PPMReader ppm(PIN_RECEIVER, channumber);
+
+void setup()
+{
+	Serial.begin(9600);
+	Serial.println("Drone is starting up...");
+
+	time_start=millis();
+
+	pinMode(PIN_RECEIVER, INPUT);
+
+	
+	Serial.println("Initializing IMU...");
+	mpu.Initialize();
+
+	//Serial.println("Starting IMU calibration...");
+	//mpu.Calibrate();
+	//Serial.println("IMU Calibration complete!");
+
+	mpu.SetGyroOffsets(-843.27f,-36.55f,-9.03f);
+
+	/*
+	Serial.println("--- Offsets:");
+	Serial.print("GyroX Offset = ");
+	Serial.println(mpu.GetGyroXOffset());
+	Serial.print("GyroY Offset = ");
+	Serial.println(mpu.GetGyroYOffset());
+	Serial.print("GyroZ Offset = ");
+	Serial.println(mpu.GetGyroZOffset());
+	*/
+
+}
+
+void loop() {
+	time_now=millis();
+
+	mpu.Execute();
+	get_rc_data();
+	//print_acc_data();
+	print_rc_data();
+	Serial.println("");
+}
+
+void print_acc_data() {
+	Serial.print("AngX:");
+	Serial.print(mpu.GetAngX());
+	Serial.print(",");
+	Serial.print("AngY:");
+	Serial.print(mpu.GetAngY());
+	Serial.print(",");
+	Serial.print("AngZ:");
+	Serial.print(mpu.GetAngZ());
+	Serial.print(",");
+	Serial.print("AccX:");
+	Serial.print(mpu.GetAccX());
+	Serial.print(",");
+	Serial.print("AccY:");
+	Serial.print(mpu.GetAccY());
+	Serial.print(",");
+	Serial.print("AccZ:");
+	Serial.print(mpu.GetAccZ());
+	Serial.print(",");
+}
+
+void print_rc_data() {
+	for (int i=0; i<(channumber); i++) {
+		Serial.print("RC");
+		Serial.print(i+1);
+		Serial.print(":");
+		Serial.print(channel_norm[i]);
+		Serial.print(",");
+	}
+}
+
+void get_rc_data() {
+	for (int channel = 1; channel <= channumber; ++channel) {
+        unsigned long value = ppm.latestValidChannelValue(channel, 0);
+        channel_norm[channel] = ((float)value-1000.0f)/10.0f;
+    }
+}

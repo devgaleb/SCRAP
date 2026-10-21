@@ -1,0 +1,37 @@
+{
+  "product": "SCRAP Drone Studio",
+  "certification_status": "NOT_CERTIFIED",
+  "flight_authorization": false,
+  "claims": [
+    {
+      "id": "C1",
+      "status": "OPEN",
+      "evidence": []
+    },
+    {
+      "id": "C2",
+      "status": "OPEN",
+      "evidence": []
+    },
+    {
+      "id": "C3",
+      "status": "OPEN",
+      "evidence": []
+    },
+    {
+      "id": "C4",
+      "status": "OPEN",
+      "evidence": []
+    },
+    {
+      "id": "C5",
+      "status": "OPEN",
+      "evidence": []
+    },
+    {
+      "id": "C6",
+      "status": "OPEN",
+      "evidence": []
+    }
+  ]
+}
